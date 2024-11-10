@@ -1,4 +1,9 @@
-# just-the-docs-template
+
+# Overview
+
+Pico-SDK-JS is a powerful toolkit designed to run JavaScript seamlessly on the Raspberry Pi Pico, making it easier than ever to develop and test applications for this microcontroller. With straightforward installation and a focus on developer ease, Pico-SDK-JS provides direct access to many of the Pico-SDK C functions within JavaScript, allowing users to leverage the extensive functionality of the Pico in a familiar, high-level language. This makes Pico-SDK-JS ideal for both hobbyists and professionals looking to streamline their development workflow on the Pico platform.
+
+# Contributing
 
 This is a *bare-minimum* template to create a [Jekyll] site that:
 
