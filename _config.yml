@@ -1,8 +1,7 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
+title: Pico-SDK-JS
+description: Pico-SDK-JS brings JavaScript to the Raspberry Pi Pico, simplifying development and testing with direct access to many Pico-SDK C functions.
 theme: just-the-docs
+logo: "assets/images/logo.webp"
+favicon_ico: "assets/images/favicon.ico"
 
-url: https://just-the-docs.github.io
-
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+url: https://pico-sdk-js.github.io
