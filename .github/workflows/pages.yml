@@ -40,6 +40,8 @@ jobs:
       - name: Download Release Info
         id: release
         uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           releaseNameRegEx: '^pico-sdk-js(.*)$'
           latest: true
