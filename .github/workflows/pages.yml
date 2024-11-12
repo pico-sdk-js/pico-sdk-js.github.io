@@ -55,7 +55,7 @@ jobs:
                 "uf2Url": "${{ fromJson(steps.release.outputs.assets)[3].browser_download_url }}",
                 "releaseUrl": "${{ steps.release.outputs.url }}"
             }
-          name: 'data/downloads/engine.json'
+          name: '_data/downloads/engine.json'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
