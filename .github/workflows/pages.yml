@@ -37,6 +37,25 @@ jobs:
           ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Download Release Info
+        id: release
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          releaseNameRegEx: '^pico-sdk-js(.*)$'
+          latest: true
+          repo: pico-sdk-js/pico-sdk-js-engine
+      - name: Create Download Data File
+        uses: jsdaniell/create-json@v1.2.3
+        with:
+          json: |
+            {
+                "version": "${{ steps.release.outputs.tag_name }}",
+                "uf2Url": "${{ fromJson(steps.release.outputs.assets)[3].browser_download_url }}",
+                "releaseUrl": "${{ steps.release.outputs.url }}"
+            }
+          name: '_data/downloads/engine.json'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
