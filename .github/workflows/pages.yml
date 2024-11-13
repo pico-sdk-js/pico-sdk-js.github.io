@@ -49,12 +49,7 @@ jobs:
       - name: Create Download Data File
         uses: jsdaniell/create-json@v1.2.3
         with:
-          json: |
-            {
-                "version": "${{ steps.release.outputs.tag_name }}",
-                "uf2Url": "${{ fromJson(steps.release.outputs.assets)[3].browser_download_url }}",
-                "releaseUrl": "${{ steps.release.outputs.url }}"
-            }
+          json: ${{ toJson(steps.release.outputs) }} # Dump the release to the engine.json
           name: '_data/downloads/engine.json'
       - name: Setup Pages
         id: pages
