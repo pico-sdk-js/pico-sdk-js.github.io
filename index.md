@@ -17,6 +17,7 @@ The Pico-SDK-JS Engine component runs on your [Raspberry Pi Pico] to manage exec
 [Download .uf2 {{ site.data.downloads.engine.tag_name }}]({{ site.data.downloads.engine.assets[3].browser_download_url }}){: .btn .btn-blue}
 [View Release Notes]({{ site.data.downloads.engine.html_url }}){: .btn .btn-blue}
 
+{: .note }
 See the [Installing Engine UF2] page for instructions on how to get the Engine installed on your Raspberry Pi Pico.
 
 ## Pico-SDK-JS CLI

@@ -5,3 +5,46 @@ logo: "assets/images/logo.webp"
 favicon_ico: "assets/images/favicon.ico"
 
 url: https://pico-sdk-js.github.io
+enable_copy_code_button: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "Pico-SDK-JS on GitHub":
+    - "https://github.com/pico-sdk-js"
+
+plugins:
+  - jekyll-default-layout
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/pico-sdk-js/pico-sdk-js.github.io" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_view_mode: "edit" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+callouts_level: quiet # or loud
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+liquid:
+  error_mode: strict
+  strict_filters: true
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+footer_content: 'Copyright &copy; 2024 Pico-SDK-JS. Distributed by an <a href="https://github.com/pico-sdk-js/pico-sdk-js.github.io/blob/main/LICENSE">GPL-3.0.</a>'
