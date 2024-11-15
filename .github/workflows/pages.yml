@@ -51,6 +51,11 @@ jobs:
         with:
           json: ${{ toJson(steps.release.outputs) }} # Dump the release to the engine.json
           name: '_data/downloads/engine.json'
+      - name: Create Settings Data File
+        uses: jsdaniell/create-json@v1.2.3
+        with:
+          json: '{ "applicationInsights": "${{ vars.APPINSIGHTS_CONNECTIONSTRING }}" }'
+          name: '_data/settings.json'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
