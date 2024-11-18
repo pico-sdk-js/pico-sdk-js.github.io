@@ -66,6 +66,15 @@ jobs:
           JEKYLL_ENV: production
       - name: Test for broken links
         run: bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external
+      - name: Upload debug artifacts
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: build-artifact
+          path: |
+            _data/**
+            _site/**
+          retention-days: 3
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3

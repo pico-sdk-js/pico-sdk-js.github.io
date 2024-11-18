@@ -21,4 +21,13 @@ jobs:
         run: bundle exec jekyll build
       - name: Test for broken links
         run: bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external
+      - name: Upload debug artifacts
+        uses: actions/upload-artifact@v4
+        if: success() || failure()
+        with:
+          name: build-artifact
+          path: |
+            _data/**
+            _site/**
+          retention-days: 1
     
