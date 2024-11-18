@@ -17,14 +17,19 @@ The Pico-SDK-JS Engine component runs on your [Raspberry Pi Pico] to manage exec
 [Download .uf2 {{ site.data.downloads.engine.tag_name }}]({{ site.data.downloads.engine.assets[3].browser_download_url }}){: .btn .btn-blue}
 [View Release Notes]({{ site.data.downloads.engine.html_url }}){: .btn .btn-blue}
 
+{: .note }
 See the [Installing Engine UF2] page for instructions on how to get the Engine installed on your Raspberry Pi Pico.
 
 ## Pico-SDK-JS CLI
 
 This command line interface runs on your computer to upload files to your [Raspberry Pi Pico] and configure the Pico-SDK-JS.
 
-[Install CLI](https://www.npmjs.com/package/pico-sdk-js-cli){: .btn .btn-blue}
+[Install CLI](https://www.npmjs.com/package/@pico-sdk-js/cli){: .btn .btn-blue}
+
+{: .note }
+See the [Installing Pico-SDK-JS CLI] page for instructions on how to get the CLI installed on your machine.
 
 [Raspberry Pi Pico]: https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html
 [Pico-SDK]: https://www.raspberrypi.com/documentation/pico-sdk/
-[Installing Engine UF2]: docs/getting-started/install
+[Installing Engine UF2]: docs/getting-started/1-install-engine
+[Installing Pico-SDK-JS CLI]: docs/getting-started/2-install-cli
