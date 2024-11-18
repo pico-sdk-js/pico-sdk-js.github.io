@@ -1,7 +1,7 @@
 ---
-title: Examples
+title: 4 - Run Examples
 layout: default
-nav_order: 1
+nav_order: 3
 parent: Getting Started
 ---
 

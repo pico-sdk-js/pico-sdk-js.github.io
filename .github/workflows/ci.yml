@@ -19,3 +19,6 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Build with Jekyll
         run: bundle exec jekyll build
+      - name: Test for broken links
+        run: bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external
+    
