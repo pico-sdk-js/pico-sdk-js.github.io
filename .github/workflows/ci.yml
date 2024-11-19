@@ -34,6 +34,8 @@ jobs:
 
       - name: Build with Jekyll
         run: npm run ci-build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload debug artifacts
         uses: actions/upload-artifact@v4
