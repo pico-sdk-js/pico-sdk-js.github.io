@@ -18,21 +18,23 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
-      - name: Download Release Info
-        id: release
-        run: node _build/build.js
+
+      - name: NPM Install
+        run: npm install
+
       - name: Build with Jekyll
-        run: bundle exec jekyll build
-      - name: Test for broken links
-        run: bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external
+        run: npm run ci-build
+
       - name: Upload debug artifacts
         uses: actions/upload-artifact@v4
         if: success() || failure()

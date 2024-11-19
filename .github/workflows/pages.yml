@@ -25,32 +25,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
-      - name: Download Release Info
-        id: release
-        run: node _build/build.js
+
       - name: Create Settings Data File
         uses: jsdaniell/create-json@v1.2.3
         with:
           json: '{ "applicationInsights": "${{ vars.APPINSIGHTS_CONNECTIONSTRING }}" }'
           name: '_data/settings.json'
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      - name: NPM Install
+        run: npm install
+
       - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: npm run ci-build
         env:
           JEKYLL_ENV: production
-      - name: Test for broken links
-        run: bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external
+
       - name: Upload debug artifacts
         uses: actions/upload-artifact@v4
         if: success() || failure()
@@ -60,6 +63,7 @@ jobs:
             _data/**
             _site/**
           retention-days: 3
+
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3

@@ -6,11 +6,15 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "postinstall": "bundle install",
     "build": "bundle exec jekyll build",
+    "get-release": "node _build/build.js",
     "clean": "bundle exec jekyll clean",
     "serve": "bundle exec jekyll serve --livereload",
-    "test": "bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external --no-enforce-https"
+    "test": "bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external --no-enforce-https",
+
+    "preci-build": "npm run get-release",
+    "ci-build": "npm run build",
+    "postci-build": "npm run test"
   },
   "repository": {
     "type": "github",
