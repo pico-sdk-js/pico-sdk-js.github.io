@@ -37,11 +37,9 @@ const response = await octokit.request({
 if (response.status !== 200) {
     console.log(`::error::Request failed with status code ${response.status}`);
     process.exit(-1);
+} else {
+    console.log(`Request completed with status code ${response.status}`);
 }
-
-console.log('::group::Release reponse')
-console.log(response.data);
-console.log('::endgroup::')
 
 let latestRelease = null;
 let latestReleaseDate = null;
