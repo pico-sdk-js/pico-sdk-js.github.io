@@ -1,9 +1,3 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll site to Pages
 
 on:
@@ -31,6 +25,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -39,18 +35,7 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
       - name: Download Release Info
         id: release
-        uses: cardinalby/git-get-release-action@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          releaseNameRegEx: '^pico-sdk-js(.*)$'
-          latest: true
-          repo: pico-sdk-js/pico-sdk-js-engine
-      - name: Create Download Data File
-        uses: jsdaniell/create-json@v1.2.3
-        with:
-          json: ${{ toJson(steps.release.outputs) }} # Dump the release to the engine.json
-          name: '_data/downloads/engine.json'
+        run: node _build/build.js
       - name: Create Settings Data File
         uses: jsdaniell/create-json@v1.2.3
         with:

@@ -4,6 +4,13 @@ on:
   pull_request:
     branches: ["main"]
 
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages-ci"
+  cancel-in-progress: true
+
 jobs:
   # Build job
   build:
@@ -11,12 +18,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.3' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Download Release Info
+        id: release
+        run: node _build/build.js
       - name: Build with Jekyll
         run: bundle exec jekyll build
       - name: Test for broken links
