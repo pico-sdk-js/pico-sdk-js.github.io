@@ -4,12 +4,17 @@
   "description": "Pico-SDK-JS is a powerful toolkit designed to run JavaScript seamlessly on the Raspberry Pi Pico, making it easier than ever to develop and test applications for this microcontroller. With straightforward installation and a focus on developer ease, Pico-SDK-JS provides direct access to many of the Pico-SDK C functions within JavaScript, allowing users to leverage the extensive functionality of the Pico in a familiar, high-level language. This makes Pico-SDK-JS ideal for both hobbyists and professionals looking to streamline their development workflow on the Pico platform.",
   "main": "index.js",
   "private": "true",
+  "type": "module",
   "scripts": {
-    "postinstall": "bundle install",
     "build": "bundle exec jekyll build",
+    "get-release": "node _build/build.js",
     "clean": "bundle exec jekyll clean",
     "serve": "bundle exec jekyll serve --livereload",
-    "test": "bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external --no-enforce-https"
+    "test": "bundle exec htmlproofer --assume_extension '.html' ./_site --disable-external --no-enforce-https",
+
+    "preci-build": "npm run get-release",
+    "ci-build": "npm run build",
+    "postci-build": "npm run test"
   },
   "repository": {
     "type": "github",
@@ -19,5 +24,10 @@
     "name": "jt000",
     "url": "https://github.com/jt000"
   },
-  "license": "GPL-3.0-only"
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@octokit/auth-action": "^5.1.1",
+    "jackspeak": "^4.0.2",
+    "octokit": "^4.0.2"
+  }
 }
