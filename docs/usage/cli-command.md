@@ -7,7 +7,7 @@ parent: Usage
 
 # Startup
 
-Start up the pico-sdk-js REPL by simply running
+Start up the Pico-SDK-JS REPL by simply running
 
 ```bash
 psj
