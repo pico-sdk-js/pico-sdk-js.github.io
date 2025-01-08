@@ -47,7 +47,6 @@ Once you have a JS file built, then you just need to publish it to the Pico and 
 
 ```bash
 psj
-> .connect
 > .write examples/01_hello_world/dist/index.js
 > .run index.js
 ```
