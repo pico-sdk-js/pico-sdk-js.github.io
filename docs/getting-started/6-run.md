@@ -17,7 +17,7 @@ After uploading your JavaScript to the Raspberry Pi Pico, run the script by runn
 
 ## Run automatically
 
-If you'd like to have your script run automatically whenever the device starts, then you can set the [autorun configuration option](../usage/cli-repl/config.md#configuration-options) through the [.config](../usage/cli-repl/config.md) REPL command.
+If you'd like to have your script run automatically whenever the device starts, then you can set the [autorun configuration option](../usage/cli-repl/config#configuration-options) through the [.config](../usage/cli-repl/config) REPL command.
 
 ```bash
 .config autorun index.js
