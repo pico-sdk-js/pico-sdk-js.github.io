@@ -53,15 +53,3 @@ After connecting the [Pico-SDK-JS CLI](https://pico-sdk-js.github.io/docs/gettin
 ```bash
 .write index.js -p ./dist/index.js
 ```
-
-### **Step 5:** Run your JavaScript
-
-After uploading your JavaScript to the Raspberry Pi Pico, run the script by running the below command in REPL to [run](https://pico-sdk-js.github.io/docs/usage/cli-repl/run.html) the file saved to your Pico's flash.
-
-```bash
-.run index.js
-```
-
-## Issues?
-
-[Please file any issues to our github page using this link](https://github.com/pico-sdk-js/pico-sdk-js-cli/issues/new?assignees=jt000&labels=&projects=&template=bug_report.md&title=)
