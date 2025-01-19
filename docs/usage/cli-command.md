@@ -25,6 +25,6 @@ Show the command line options help
 
 Adjust the log level that is output from the REPL. Valid options are "trace", "debug", "warning", or "error" (default). (alias "--ll")
 
-`--auto-connect`
+`--connection <device>`
 
-Automatically connect to device on /dev/ttyACM0. (alias "--ac")
+Specifies the target device to connect to: "local" for a local process, "auto" for the first available device, or a specific serial port path (e.g., /dev/tty.XXX or COM1). (alias "--c")

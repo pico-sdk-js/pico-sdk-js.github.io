@@ -47,4 +47,4 @@ liquid:
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: 'Copyright &copy; 2025 Pico-SDK-JS. Distributed by an <a href="https://github.com/pico-sdk-js/pico-sdk-js.github.io/blob/main/LICENSE">GPL-3.0.</a>'
+footer_content: 'Copyright &copy; 2025 Pico-SDK-JS. Distributed by an <a href="https://github.com/pico-sdk-js/pico-sdk-js.github.io/blob/main/LICENSE">GPL-3.0.</a><br /><strong>Found an issue?</strong> <a href="https://github.com/pico-sdk-js/pico-sdk-js-cli/issues/new?assignees=jt000&labels=&projects=&template=bug_report.md&title=" target="_blank">Please submit any issues to our github page by clicking here</a>'
